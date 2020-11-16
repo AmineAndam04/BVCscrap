@@ -35,12 +35,12 @@ data=load.loadata('Wafa Assur')
 data.tail()
 ```
 ```{r, engine='python', count_lines}
-	          Clôture	Plus_haut	Plus_bas	Ouverture	Volume
-2020-10-27	3355	   3355	      3355	    3355	   10
-2020-11-02	3355   	 3355	      3355	    3355	    3
-2020-11-03	3360	   3360	      3357	    3357	  307
-2020-11-09	3427	   3427	      3427	    3427	    1
-2020-11-10	3450	   3450	      3428	    3428	    9
+              close     high     low    open    vol
+2020-10-27	3355	3355	3355	3355	10
+2020-11-02	3355	3355	3355	3355	3
+2020-11-03	3360	3360	3357	3357	307
+2020-11-09	3427	3427	3427	3427	1
+2020-11-10	3450	3450	3428	3428	9
 ```
 ### Data of many stocks
 ```python
@@ -49,7 +49,7 @@ data=load.loadmany('BoA','BCP','BMCI')
 data.tail()
 ```
 ```{r, engine='python', count_lines}
-	            BoA	  BCP	  BMCI
+	         BoA	 BCP	BMCI
 2020-11-09	140.5	241.90	609.0
 2020-11-10	143.0	244.00	608.9
 2020-11-11	143.7	241.50	NaN
