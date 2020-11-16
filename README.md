@@ -7,7 +7,16 @@ In order to use BVCscrap you should download the following packages: requests, b
 The outputs of this library are DataFrame, so Pandas should be installed 
 
 ## Installation
-
+Download the source code of the library[BVCscrap](https://github.com/AmineAndam04/Algorithmic-trading/tree/master/AT) and put it in your working directory or  use
+```python
+import os
+path="C:/Users/pc/Desktop/..."  # the location of the downloaded code 
+os.chdir(path)
+```
+Then import the libray : 
+```python
+import BVCscrap as load
+```
 ## Usage
 To use this libary there is a notation to respect: names of stocks.
 ### Get the notation
