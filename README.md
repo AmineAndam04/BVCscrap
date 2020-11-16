@@ -1,15 +1,15 @@
 # BVCscrap
-BVCscrap is a Python library to retrieve data from [LeBoursier.ma](https://www.leboursier.ma/), which provides **data retrieval from up to: 73 stocks
-
-BVCscrap allows the user to download historical data from all the shares traded at Casablanca Stock Exchange. 
+BVCscrap is a Python library to retrieve data from [LeBoursier.ma](https://www.leboursier.ma/), which provides data retrieval from up to: 74 stocks.BVCscrap allows the user to download historical data from all the shares traded at Casablanca Stock Exchange. 
 
 ## Requirements 
-In order to use BVCscrap you should download the following packages: requests, beautifulsoup4,lxml,json, Pandas and datetime.
+In order to use BVCscrap you should download the following packages: requests, beautifulsoup4, lxml, json, and datetime.
+
+The outputs of this library are DataFrame, so Pandas should be installed 
 
 ## Installation
 
 ## Usage
-
+To use this libary there is a notation to respect: names of stocks.
 ### Get the notation
 ```python 
 import BVCscrap  as load
@@ -57,3 +57,20 @@ data.tail()
 2020-11-13	143.7	242.45	610.0
 ```
 
+## Getting Help 
+if you are working in Jupyter notebook/lab, you can see the docstring of our  functions by using Shift+Tab.An example is shown below
+```python
+"""
+	Load Data 
+	Inputs: 
+			Input   | Type                             | Description
+			=================================================================================
+			 name   |string                            | You must respect the notation. To see the notation see BVCscrap.notation
+	                 start  |string "YYYY-MM-DD"               | starting date Must respect the notation
+	                 end    |string "YYYY-MM-DD"               | Must respect the notation
+	Outputs:
+	                 Output | Type                             | Description
+	                ================================================================================= 
+	     	                | pandas.DataFrame (4 columns)     | close high low open vol
+"""
+```
