@@ -12,12 +12,12 @@ def loadata(name, start=None,end=None):
 			Input   | Type                             | Description
 			=================================================================================
 			 name   |string                            | You must respect the notation. To see the notation see BVCscrap.notation
-	         start  |string "YYYY-MM-DD"               | starting date Must respect the notation
-	         end    |string "YYYY-MM-DD"               | Must respect the notation
+	                 start  |string "YYYY-MM-DD"               | starting date Must respect the notation
+	                 end    |string "YYYY-MM-DD"               | Must respect the notation
 	Outputs:
-	        Output | Type                             | Description
-	       ================================================================================= 
-	               | pandas.DataFrame (4 columns)     | Clôture	Plus_haut	Plus_bas	Ouverture	Volume
+	               Output | Type                             | Description
+	               ================================================================================= 
+	                      | pandas.DataFrame (4 columns)     | Clôture Plus_haut Plus_bas Ouverture	Volume
 	"""
 	code=get_code(name)
 	link='https://www.leboursier.ma/component/option,com_api/ISIN,'+code+'/format,json/lang,fr/method,getStockOHLC/view,api/'
@@ -37,12 +37,12 @@ def loadmany(*args,start=None,end=None):
 			Input   | Type                             | Description
 			=================================================================================
 			 *args  |strings                           | You must respect the notation. To see the notation see BVCscrap.notation
-	         start  |string "YYYY-MM-DD"               | starting date Must respect the notation
-	         end    |string "YYYY-MM-DD"               | Must respect the notation
+	                 start  |string "YYYY-MM-DD"               | starting date Must respect the notation
+	                 end    |string "YYYY-MM-DD"               | Must respect the notation
 	Outputs:
-	        Output | Type                                 | Description
-	       ================================================================================= 
-	               | pandas.DataFrame (len(args) columns) | close prices of selected equities
+	              Output | Type                                 | Description
+	              ================================================================================= 
+	                     | pandas.DataFrame (len(args) columns) | close prices of selected equities
 	"""
 	data=[]
 	for i in args:
