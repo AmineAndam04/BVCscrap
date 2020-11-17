@@ -4,7 +4,7 @@ BVCscrap is a Python library to retrieve data from [LeBoursier.ma](https://www.l
 ## Requirements 
 In order to use BVCscrap you should download the following packages: requests, beautifulsoup4, lxml, json, and datetime.
 
-The outputs of this library are DataFrame, so Pandas should be installed 
+The outputs of this library are DataFrames, so Pandas should be installed 
 
 ## Installation
 Download the source code of the library [BVCscrap](https://github.com/AmineAndam04/BVCscrap/tree/main/BVCscrap) and put it in your working directory or  use
