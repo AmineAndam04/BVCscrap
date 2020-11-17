@@ -67,7 +67,7 @@ data.tail()
 ```
 
 ## Getting Help 
-if you are working in Jupyter notebook/lab, you can see the docstring of our  functions by using Shift+Tab.An example is shown below
+If you are working in Jupyter notebook/lab, you can see the docstring of our  functions by using Shift+Tab. An example is shown below
 ```python
 """
 	Load Data 
