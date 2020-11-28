@@ -22,7 +22,7 @@ To use this libary there is a notation to respect: names of stocks.
 ### Get the notation
 ```python 
 import BVCscrap  as load
-load.notation
+load.notation()
 ```
 ```{r, engine='python', count_lines}
 ['Addoha',
