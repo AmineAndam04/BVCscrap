@@ -9,9 +9,9 @@ from .Notation import notation_code
 
 # Get the code of the asset to acces data
 def get_code(name):
-	notation_code=notation_code()
-    for action in notation_code:
-        if action["name"]==name:
+    nottation_code=notation_code()
+    for action in nottation_code :
+        if action["name"]==name :
             code=action['ISIN']
             return code
 
