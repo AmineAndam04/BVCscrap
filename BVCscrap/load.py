@@ -17,7 +17,11 @@ def loadata(name, start=None,end=None):
 	Outputs:
 	        Output | Type                             | Description
 	       ================================================================================= 
-	               | pandas.DataFrame (4 columns)     | Clôture	Plus_haut	Plus_bas	Ouverture	Volume
+	               | pandas.DataFrame (4 columns)     | Value	Low	High	Variation (%)	Volume 
+		                           		   * !! For MASI you get JUST "Value"
+	Exemple :
+	import BVCscrap  as load
+	data=load.loadata('BCP',start='2021-09-01',end='2021-09-10')
 	"""
 	code=get_code(name)
 	if name!="MASI":
@@ -53,6 +57,9 @@ def loadmany(*args,start=None,end=None):
 	        Output | Type                                 | Description
 	       ================================================================================= 
 	               | pandas.DataFrame (len(args) columns) | close prices of selected equities
+	Exemple :
+	import BVCscrap as load
+	data=load.loadmany('BCP','BMCI',start="2021-08-30",end='2021-09-04')
 	"""
 	data=[]
 	for i in args:
@@ -65,6 +72,21 @@ def loadmany(*args,start=None,end=None):
 
 
 def getIntraday(name):
+    """
+	Load the intraday data  
+	Inputs: 
+			Input   | Type                             | Description
+			=================================================================================
+			 name  |strings                           | You must respect the notation. To see the notation see BVCscrap.notation
+	       
+	Outputs:
+	        Output | Type                                 | Description
+	       ================================================================================= 
+	               | pandas.DataFrame                     | Intraday data
+	Exemple :
+	import BVCscrap as load
+	data=load.getIntraday('MASI')
+    """
     if name!='MASI':
         code=get_code(name)
         link="https://www.leboursier.ma/api?method=getStockIntraday&ISIN="+code+"&format=json"
