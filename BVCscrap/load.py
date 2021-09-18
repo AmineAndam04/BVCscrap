@@ -55,10 +55,7 @@ def loadmany(*args,start=None,end=None):
 	               | pandas.DataFrame (len(args) columns) | close prices of selected equities
 	"""
 	data=[]
-	print(args)
 	for i in args:
-		print(start)
-		print(end)
 		provisoir=loadata(i,start,end)
 		row=provisoir["Value"]
 		data.append(row)
