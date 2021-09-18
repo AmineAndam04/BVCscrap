@@ -102,3 +102,6 @@ If you are working in Jupyter notebook/lab, you can see the docstring of our  fu
 	     	                | pandas.DataFrame (4 columns)     | close high low open vol
 """
 ```
+
+
+Question? Contact me on Twitter [@AmineAndam](https://twitter.com/AmineAndam)  or on Linkedin [ANDAM AMINE](https://www.linkedin.com/in/amineandam/).
