@@ -6,7 +6,7 @@ with open('README.md') as readme_file:
 
 setup_args = dict(
     name='BVCscrap',
-    version='0.1.0',
+    version='0.0.1',
     description='Python library to scrape financial data from Casablanca Stock Exchange(Bourse des Valeurs de Casablanca)',
     long_description_content_type="text/markdown",
     long_description=README,
@@ -19,5 +19,5 @@ setup_args = dict(
 
 )
 
-install_requires = ['requests','BeautifulSoup','pandas','json','datetime']
+install_requires = ['requests','BeautifulSoup','pandas','json','datetime',"lxml"]
 
