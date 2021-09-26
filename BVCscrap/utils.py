@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests 
 import pandas as pd
 import json
+import datetime
 from .Notation import notation_code
 
 
@@ -14,7 +15,7 @@ def get_code(name):
             return code
 
 def get_data(soup):
-    table= json.loads(soup.text)
+    table= json.loads(soup.text.encode().decode('utf-8-sig'))
     row_data=pd.DataFrame(table["result"])
     date=row_data['date']
     row_data.drop(['date'],axis=1,inplace=True)
@@ -23,7 +24,7 @@ def get_data(soup):
     return row_data
 
 def intradata(soup):
-    table= json.loads(soup.text)
+    table= json.loads(soup.text.encode().decode('utf-8-sig'))
     row_data=pd.DataFrame(table["result"][0])
     index=row_data['labels'].values
     row_data.drop(['labels'],axis=1,inplace=True)
@@ -33,7 +34,7 @@ def intradata(soup):
 
 
 def get_masi(soup):
-    table= json.loads(soup.text)
+    table= json.loads(soup.text.encode().decode('utf-8-sig'))
     row_data=pd.DataFrame(table["result"])
     date=row_data['labels']
     row_data.drop(['labels'],axis=1,inplace=True)
