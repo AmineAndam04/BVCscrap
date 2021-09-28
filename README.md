@@ -35,7 +35,7 @@ load.notation()
 ### Data of one single stock
 ```python
 import BVCscrap  as load
-data=load.loadata('Wafa Assur')
+data=load.loadata('Wafa Assur',start="2020-10-27",end="2020-11-10")
 data.tail()
 ```
 ```{r, engine='python', count_lines}
@@ -49,7 +49,7 @@ data.tail()
 ### Data of many stocks
 ```python
 import BVCscrap  as load
-data=load.loadmany('BoA','BCP','BMCI')
+data=load.loadmany('BoA','BCP','BMCI',start="2020-11-09",end="2020-11-13")
 data.tail()
 ```
 ```{r, engine='python', count_lines}
