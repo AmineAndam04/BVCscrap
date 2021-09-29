@@ -17,18 +17,15 @@ def loadata(name, start=None,end=None):
 	Outputs:
 	        Output | Type                             | Description
 	       ================================================================================= 
-	               | pandas.DataFrame (4 columns)     | Value	Low	High	Variation (%)	Volume 
-		                           		   * !! For MASI you get JUST "Value"
-	Exemple :
-	import BVCscrap  as load
-	data=load.loadata('BCP',start='2021-09-01',end='2021-09-10')
+	               | pandas.DataFrame (4 columns)     |Value	Low	High	Variation (%)	Volume
 	"""
 	code=get_code(name)
 	if name!="MASI":
 		if start and end:
 			link="https://www.leboursier.ma/api?method=getPriceHistory&ISIN="+code+"&format=json&from="+start+"&to=" +end
 		else :
-			start='2011-09-18'      
+			start='2011-09-18'
+			end= str(datetime.datetime.today().date())    
 			link="https://www.leboursier.ma/api?method=getPriceHistory&ISIN="+code+"&format=json&from="+start+"&to=" +end 
 		request_data = requests.get(link)
 		soup = BeautifulSoup(request_data.text,features="lxml")
@@ -57,36 +54,18 @@ def loadmany(*args,start=None,end=None):
 	        Output | Type                                 | Description
 	       ================================================================================= 
 	               | pandas.DataFrame (len(args) columns) | close prices of selected equities
-	Exemple :
-	import BVCscrap as load
-	data=load.loadmany('BCP','BMCI',start="2021-08-30",end='2021-09-04')
 	"""
 	data=[]
 	for i in args:
 		provisoir=loadata(i,start,end)
 		row=provisoir["Value"]
 		data.append(row)
-	data=pd.concat(data,axis=1,sort="False")
+	data=pd.concat(data,axis=1,sort="False").reindex(data[0].index)
 	data.columns=args
 	return data
 
 
 def getIntraday(name):
-    """
-	Load the intraday data  
-	Inputs: 
-			Input   | Type                             | Description
-			=================================================================================
-			 name  |strings                           | You must respect the notation. To see the notation see BVCscrap.notation
-	       
-	Outputs:
-	        Output | Type                                 | Description
-	       ================================================================================= 
-	               | pandas.DataFrame                     | Intraday data
-	Exemple :
-	import BVCscrap as load
-	data=load.getIntraday('MASI')
-    """
     if name!='MASI':
         code=get_code(name)
         link="https://www.leboursier.ma/api?method=getStockIntraday&ISIN="+code+"&format=json"
