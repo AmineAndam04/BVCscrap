@@ -7,7 +7,7 @@ In order to use BVCscrap you should download the following packages: requests, b
 The outputs of this library are DataFrames, so Pandas should be installed 
 
 ## Installation
- 
+
 ```python
 pip install BVCscrap
 import BVCscrap as load
@@ -33,32 +33,68 @@ load.notation()
 ```
 
 ### Data of one single stock
+To get data from date 0 (The data is provided from Septembre 2016)
 ```python
 import BVCscrap  as load
-data=load.loadata('Wafa Assur',start="2020-10-27",end="2020-11-10")
+data=load.loadata('BCP')
 data.tail()
 ```
 ```{r, engine='python', count_lines}
-              close     high     low    open    vol
-2020-10-27	3355	3355	3355	3355	10
-2020-11-02	3355	3355	3355	3355	3
-2020-11-03	3360	3360	3357	3357	307
-2020-11-09	3427	3427	3427	3427	1
-2020-11-10	3450	3450	3428	3428	9
+             Value	  Low	   High	  Variation(%)	Volume
+   date                                  
+22/09/2021	271.00	 269.60	  271.00	0.00		52908
+23/09/2021	272.60	 271.00	  273.00	0.59		37230
+24/09/2021	276.00	 271.00	  278.00	1.25		162109
+27/09/2021	275.00	 272.05	  276.95   -0.36		51533
+28/09/2021	276.05	 272.70	  276.05	0.38		17676
+```
+You can get data between two periods :
+```python
+data=load.loadata('CIH',start='2018-01-01',end='2019-01-01')
+data
+```
+```{r, engine='python', count_lines}
+	       Value	Low	 High   Variation (%)	Volume
+date					
+02/01/2018	278.0	278.00	279.5	-2.80	  	312
+03/01/2018	278.0	278.00	279.5	0.00		312
+...	...	...	...	...	...
+28/12/2018	294.0	294.00	301.0	-2.00		211865
+31/12/2018	300.0	300.00	300.0	2.04		12
 ```
 ### Data of many stocks
 ```python
 import BVCscrap  as load
-data=load.loadmany('BoA','BCP','BMCI',start="2020-11-09",end="2020-11-13")
+load.loadmany('BCP','CIH')
 data.tail()
 ```
 ```{r, engine='python', count_lines}
-	         BoA	 BCP	BMCI
-2020-11-09	140.5	241.90	609.0
-2020-11-10	143.0	244.00	608.9
-2020-11-11	143.7	241.50	NaN
-2020-11-12	143.0	243.80	NaN
-2020-11-13	143.7	242.45	610.0
+             BCP     CIH
+22/09/2021	271.00	301.0
+23/09/2021	272.60	305.0
+24/09/2021	276.00	313.0
+27/09/2021	275.00	310.0
+28/09/2021	276.05	305.8
+```
+You can use start and end arguments :
+```python
+load.loadmany('BCP','CIH',start='2018-01-01',end='2019-01-01')
+data.tail()
+```
+```{r, engine='python', count_lines}
+	         BCP	CIH
+date		
+02/01/2018	293.0	278.0
+03/01/2018	289.9	278.0
+04/01/2018	285.3	280.8
+05/01/2018	283.0	280.8
+08/01/2018	285.4	280.8
+...	...	...
+25/12/2018	279.0	294.2
+26/12/2018	277.0	296.0
+27/12/2018	279.9	300.0
+28/12/2018	280.0	294.0
+31/12/2018	280.0	300.0
 ```
 ## Intraday data
 ```python
