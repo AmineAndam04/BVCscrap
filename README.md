@@ -24,6 +24,7 @@ You can get all the key indicators available at "Bourse de Casablanca"
 https://user-images.githubusercontent.com/49843367/159122265-efe58782-02ae-43ff-8fe8-04054c3de5e3.mp4
 
 You can also get indexes summary for each session. Examples and more functions are available at  [this notebook](/BVCscrap_Exemple.ipynb)
+![indicateur_02](https://user-images.githubusercontent.com/49843367/159123465-bd556c63-bbbf-4354-aea8-fbd43f900983.png)
 
 ## Usage
 To use this libary there is a notation to respect: names of stocks.
