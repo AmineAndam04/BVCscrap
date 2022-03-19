@@ -12,6 +12,9 @@ The outputs of this library are DataFrames, so Pandas should be installed
 pip install BVCscrap
 import BVCscrap as load
 ```
+## What's new :
+For each stock you can get: Session data, latest transactions, best limit and  data of the last 5 sessions:
+(https://github.com/AmineAndam04/BVCscrap/blob/main/media/getCours.mp4)
 ## Usage
 To use this libary there is a notation to respect: names of stocks.
 ### Get the notation
