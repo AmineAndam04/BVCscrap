@@ -11,7 +11,7 @@ def loadata(name, start=None,end=None):
 	Inputs: 
 			Input   | Type                             | Description
 			=================================================================================
-			 name   |string                            | You must respect the notation. To see the notation see BVCscrap.notation
+			 name   |string                            | You must respect the notation. To see the notation see BVCscrap.notation()
 	         start  |string "YYYY-MM-DD"               | starting date Must respect the notation
 	         end    |string "YYYY-MM-DD"               | Must respect the notation
 	Outputs:
