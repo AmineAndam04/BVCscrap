@@ -1,5 +1,5 @@
 # BVCscrap
-BVCscrap is a Python library to retrieve data from [LeBoursier.ma](https://www.leboursier.ma/), which provides data retrieval from up to 74 stocks. BVCscrap allows the user to download historical and intraday data from all the shares traded at Casablanca Stock Exchange. 
+BVCscrap is a Python library to retrieve data from [LeBoursier.ma](https://www.leboursier.ma/), which provides data retrieval from up to 74 stocks. BVCscrap allows the user to download historical and intraday data from all the shares traded on Casablanca Stock Exchange. 
 
 ## Requirements 
 In order to use BVCscrap you should download the following packages: requests, beautifulsoup4, lxml, json, and datetime.
