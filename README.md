@@ -6,7 +6,7 @@ In order to use BVCscrap you should download the following packages: requests, b
 
 The outputs of this library are DataFrames, so Pandas should be installed 
 
-## Installation
+## Install
 
 ```python
 pip install BVCscrap
@@ -14,7 +14,17 @@ import BVCscrap as load
 ```
 ## What's new :
 For each stock you can get: Session data, latest transactions, best limit and  data of the last 5 sessions:
-(https://github.com/AmineAndam04/BVCscrap/blob/main/media/getCours.mp4)
+
+https://user-images.githubusercontent.com/49843367/159122217-c2bc3225-df3a-40eb-abfd-a890fdfa2f2b.mp4
+
+
+You can get all the key indicators available at "Bourse de Casablanca"
+
+
+https://user-images.githubusercontent.com/49843367/159122265-efe58782-02ae-43ff-8fe8-04054c3de5e3.mp4
+
+You can also get indexes summary for each session. Examples and more functions are available at  [this notebook](/BVCscrap_Exemple.ipynb)
+
 ## Usage
 To use this libary there is a notation to respect: names of stocks.
 ### Get the notation
@@ -119,6 +129,69 @@ data
 15:18	12978.58
 15:30	13019.20
 ```
+## Session data
+```python
+cours=bvc.getCours("BOA") 
+cours.keys()
+```
+```{r,engine="python",count_lines}
+dict_keys(['Données_Seance', 'Meilleur_limit', 'Dernieres_Tansaction', 'Seance_prec'])
+```
+```python
+import pandas as pd
+cours["Données_Seance"]
+cours['Meilleur_limit']
+pd.DataFrame(cours["Seance_prec"])
+pd.DataFrame(cours["Dernieres_Tansaction"])
+```
+## Key Indicators
+```python
+indicateur=bvc.getKeyIndicators('BOA')
+indicateur.keys()
+```
+```{r,engine="python",count_lines}
+dict_keys(['Info_Societe', 'Actionnaires', 'Chiffres_cles', 'Ratio'])
+```
+## Dividend
+```python
+dividends=bvc.getDividend("BOA")
+pd.DataFrame(dividends)
+```
+```{r,engine="python",count_lines}
+        Annee	Montant_Dividende Type_Dividende  Date_detachement  Date_paiement
+0	2020	  5,00	           Ordinaire	   15/07/2021	    29/07/2021
+1	2019	  5,00	           Ordinaire	   10/08/2020	    28/09/2020
+2	2018	  5,00		   Ordinaire	   03/07/2019	    15/08/2019
+3	2017	  5,00		   Ordinaire	   29/06/2018	    10/07/2018
+```
+## Indexes summary
+```python
+index=bvc.getIndex()
+index.keys()
+```
+```{r,engine="python",count_lines}
+dict_keys(['Resume indice', 'Indice rentabilite', 'Indices en devises', 'Indice FTSE', 'Indices sectoriels'])
+```
+## Weights
+```python
+pd.DataFrame(bvc.getPond())
+```
+```{r,engine="python",count_lines}
+	Code Isin	Instrument    Nombre de titres	Cours	Facteur flottant Facteur plafonnement	Capitalisation flottante Poids
+0	MA0000012445	ATTIJARIWAFA BANK	215140839 477,95	0,30	  1,00	                    30847969200,02	 0,1834
+1	MA0000011488	ITISSALAT AL-MAGHRIB	879095340 130,10	0,20	  1,00			    22874060746,80	 0,1360
+2	MA0000012320	LAFARGEHOLCIM MAR	23431240 1919,00	0,30	  1,00			    13489364868,00	 0,0802
+```
+## Indexes of the current session
+```python
+recap=bvc.getIndexRecap()
+recap.keys()
+```
+```{r,engine="python",count_lines}
+dict_keys(['Indice', 'Volume Global', 'Plus forte hausse', 'Plus forte baisse'])
+```
+
+
 ## Getting Help 
 If you are working in Jupyter notebook/lab, you can see the docstring of our  functions by using Shift+Tab. An example is shown below
 ```python
