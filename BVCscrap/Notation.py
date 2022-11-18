@@ -74,7 +74,7 @@ def notation():
  'Unimer','SOTHEMA',
  'Wafa Assur',
  'Zellidja',
- 'MASI']
+ 'MASI',"MSI20"]
 	
 def notation_code():
       return [{'name': 'Addoha', 'ISIN': 'MA0000011512'},
@@ -153,7 +153,7 @@ def notation_code():
  {'name': 'Unimer', 'ISIN': 'MA0000012023'},
  {'name': 'Wafa Assur', 'ISIN': 'MA0000010928'},
  {'name': 'Zellidja', 'ISIN': 'MA0000010571'},
- {'name': 'MASI', 'ISIN': ''}]
+ {'name': 'MASI', 'ISIN': ''},{'name': 'MSI20', 'ISIN': ''}]
     
 def notation_value():
   return {'Addoha' : '9000' , 'AFMA' : '12200' , 'Afric Indus' : '11700' , 'Afriquia Gaz' : '7100' , 'Agma' : '6700' , 'Alliances' : '11200' , 'Aluminium Maroc' : '6600' , 'Aradei Capital' : '27' , 'ATLANTASANAD' : '10300' , 'Attijariwafa' : '8200' , 'Auto Hall' : '3200' , 'Auto Nejma' : '7000' , 'BALIMA' : '3300' , 'BOA' : '1100' , 'BCP' : '8000' , 'BMCI' : '5100' , 'Cartier Saada' : '8900' , 'CDM' : '3600' , 'Central Danone' : '3900' , 'CIH' : '3100' , 'Ciments Maroc' : '4000' , 'CMT' : '11000' , 'Colorado' : '9200' , 'COSUMAR' : '4100' , 'CTM' : '2200' , 'Dari Couspate' : '8500' , 'Delattre Lev' : '10800' , 'Delta Holding' : '10900' , 'Diac Salaf' : '4200' , 'DISWAY' : '9700' , 'Ennakl' : '11300' , 'EQDOM' : '2300' , 'FENIE BROSSETTE' : '9300' , 'HPS' : '9600' , 'IBMaroc' : '7600' , 'Immr Invest' : '12' , 'INVOLYS' : '9500' , 'Jet Contractors' : '11600' , 'LABEL VIE' : '11100' , 'LafargeHolcim' : '3800' , 'Lesieur Cristal' : '4800' , 'Lydec' : '8600' , 'M2M Group' : '10000' , 'Maghreb Oxygene' : '7200' , 'Maghrebail' : '1600' , 'Managem' : '7300' , 'Maroc Leasing' : '2500' , 'Maroc Telecom' : '8001' , 'Med Paper' : '6500' , 'Microdata' : '10600' , 'Mutandis' : '21' , 'Nexans Maroc' : '7400' , 'Oulmes' : '5200' , 'PROMOPHARM' : '9900' , 'Rebab Company' : '5300' , 'Res.Dar Saada' : '12000' , 'Risma' : '8700' , 'S2M' : '11800' , 'Saham Assurance' : '11400' , 'SALAFIN' : '10700' , 'SAMIR' : '6800' , 'SMI' : '1500' , 'Stokvis Nord Afr' : '10500' , 'SNEP' : '9400' , 'SODEP' : '12300' , 'Sonasid' : '1300' , 'SOTHEMA' : '9800' , 'SRM' : '2000' , 'Ste Boissons' : '10400' , 'STROC Indus' : '11500' , 'TAQA Morocco' : '11900' , 'Timar' : '10100' , 'Total Maroc' : '12100' , 'Unimer' : '7500' , 'Wafa Assur' : '6400' , 'Zellidja' : '5800'}

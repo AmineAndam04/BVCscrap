@@ -3,8 +3,7 @@ import requests
 import pandas as pd
 import json
 import datetime
-from .Notation import notation_code,notation_value
-
+from .Notation import *
 
 
 def get_code(name):
@@ -19,17 +18,17 @@ def get_valeur(name):
     name_value=notation_value()
     return name_value[name]
 
-def get_data(soup):
-    table= json.loads(soup.text.encode().decode('utf-8-sig'))
+def get_data(soup,decode):
+    table= json.loads(soup.text.encode().decode(decode))
     row_data=pd.DataFrame(table["result"])
-    date=row_data['date']
-    row_data.drop(['date'],axis=1,inplace=True)
+    row_data.columns=["Date","Value","Min","Max","Variation","Volume"]
+    date=row_data['Date']
+    row_data.drop(['Date'],axis=1,inplace=True)
     row_data.index=date
-    row_data.columns=["Value","Low","High","Variation (%)","Volume"]
     return row_data
 
-def intradata(soup):
-    table= json.loads(soup.text.encode().decode('utf-8-sig'))
+def intradata(soup,decode):
+    table= json.loads(soup.text.encode().decode(decode))
     row_data=pd.DataFrame(table["result"][0])
     index=row_data['labels'].values
     row_data.drop(['labels'],axis=1,inplace=True)
@@ -38,8 +37,8 @@ def intradata(soup):
     return row_data
 
 
-def get_masi(soup):
-    table= json.loads(soup.text.encode().decode('utf-8-sig'))
+def get_index(soup,decode):
+    table= json.loads(soup.text.encode().decode(decode))
     row_data=pd.DataFrame(table["result"])
     date=row_data['labels']
     row_data.drop(['labels'],axis=1,inplace=True)
