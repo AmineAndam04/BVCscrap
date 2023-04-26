@@ -1,6 +1,8 @@
 # BVCscrap
 BVCscrap is a Python library to retrieve data from [LeBoursier.ma](https://www.leboursier.ma/) and [Bourse de Casablanca](https://www.casablanca-bourse.com/bourseweb/index.aspx), which provides data retrieval from up to 78 stocks and indices. BVCscrap allows the user to download historical and intraday data from all the shares traded on Casablanca Stock Exchange. 
-
+<p align="center">
+<img  width="350" height="350" src="https://user-images.githubusercontent.com/49843367/234708277-14d932f3-ba75-4bd8-9e6d-2a0b49c876b8.jpg">
+</p>
 BVCscrap stands for "La Bourse des valeurs de Casablanca" scraper.
 
 -	PyPI: https://pypi.org/project/BVCscrap/
