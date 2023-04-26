@@ -6,6 +6,7 @@ BVCscrap is a Python library to retrieve data from [LeBoursier.ma](https://www.l
 <p align="center">
 <img  width="350" height="350" src="https://user-images.githubusercontent.com/49843367/234708277-14d932f3-ba75-4bd8-9e6d-2a0b49c876b8.jpg">
 </p>
+
 BVCscrap stands for "La Bourse des valeurs de Casablanca" scraper.
 
 -	PyPI: https://pypi.org/project/BVCscrap/
